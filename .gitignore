@@ -1,0 +1,3 @@
+# ignore all files in the build/ directory
+dust_data/
+condor_runs_knownsample/

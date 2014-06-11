@@ -1,0 +1,180 @@
+==================
+MAKE TABLES
+==================
+
+CREATE TABLE macho_allwise_allmags (machoid MEDIUMINT NOT NULL, wisename VARCHAR(20), match_rad FLOAT, ra FLOAT, decl FLOAT, glon FLOAT, glat FLOAT, w1 FLOAT, w1err FLOAT, w1snr FLOAT, w2 FLOAT, w2err FLOAT, w2snr FLOAT, w3 FLOAT, w3err FLOAT, w3snr FLOAT, w4 FLOAT, w4err FLOAT, w4snr FLOAT,ccflag VARCHAR(4), extflg INT,var_flg VARCHAR(4), n2mass INT, jmag FLOAT, jerr FLOAT, hmag FLOAT, herr FLOAT, kmag FLOAT, kerr FLOAT, macho_ra FLOAT,macho_decl FLOAT);
+
+CREATE TABLE ogle3_allwise_allmags (ogleid MEDIUMINT NOT NULL, wisename VARCHAR(20), match_rad FLOAT, ra FLOAT, decl FLOAT, glon FLOAT, glat FLOAT, w1 FLOAT, w1err FLOAT, w1snr FLOAT, w2 FLOAT, w2err FLOAT, w2snr FLOAT, w3 FLOAT, w3err FLOAT, w3snr FLOAT, w4 FLOAT, w4err FLOAT, w4snr FLOAT,ccflag VARCHAR(4), extflg INT,var_flg VARCHAR(4), n2mass INT, jmag FLOAT, jerr FLOAT, hmag FLOAT, herr FLOAT, kmag FLOAT, kerr FLOAT, ogle_ra FLOAT,ogle_decl FLOAT);
+
+CREATE TABLE simbad_allwise_allmags (simbadid MEDIUMINT NOT NULL, wisename VARCHAR(20), match_rad FLOAT, ra FLOAT, decl FLOAT, glon FLOAT, glat FLOAT, w1 FLOAT, w1err FLOAT, w1snr FLOAT, w2 FLOAT, w2err FLOAT, w2snr FLOAT, w3 FLOAT, w3err FLOAT, w3snr FLOAT, w4 FLOAT, w4err FLOAT, w4snr FLOAT,ccflag VARCHAR(4),extflg INT,var_flg VARCHAR(4), n2mass INT, jmag FLOAT, jerr FLOAT, hmag FLOAT, herr FLOAT, kmag FLOAT, kerr FLOAT, simbad_ra FLOAT,simbad_decl FLOAT);
+
+CREATE TABLE lrg_allwise_allmags (lrgid MEDIUMINT NOT NULL, wisename VARCHAR(20), match_rad FLOAT, ra FLOAT, decl FLOAT, glon FLOAT, glat FLOAT, w1 FLOAT, w1err FLOAT, w1snr FLOAT, w2 FLOAT, w2err FLOAT, w2snr FLOAT, w3 FLOAT, w3err FLOAT, w3snr FLOAT, w4 FLOAT, w4err FLOAT, w4snr FLOAT,ccflag VARCHAR(4),extflg INT,var_flg VARCHAR(4), n2mass INT, jmag FLOAT, jerr FLOAT, hmag FLOAT, herr FLOAT, kmag FLOAT, kerr FLOAT, lrg_ra FLOAT,lrg_decl FLOAT);
+
+CREATE TABLE vagc_allwise_allmags (vagcid MEDIUMINT NOT NULL, wisename VARCHAR(20), match_rad FLOAT, ra FLOAT, decl FLOAT, glon FLOAT, glat FLOAT, w1 FLOAT, w1err FLOAT, w1snr FLOAT, w2 FLOAT, w2err FLOAT, w2snr FLOAT, w3 FLOAT, w3err FLOAT, w3snr FLOAT, w4 FLOAT, w4err FLOAT, w4snr FLOAT,ccflag VARCHAR(4),extflg INT,var_flg VARCHAR(4), n2mass INT, jmag FLOAT, jerr FLOAT, hmag FLOAT, herr FLOAT, kmag FLOAT, kerr FLOAT, vagc_ra FLOAT,vagc_decl FLOAT);
+
+CREATE TABLE dr9_sspp_allwise_allmags (ssppid MEDIUMINT NOT NULL, wisename VARCHAR(20), match_rad FLOAT, ra FLOAT, decl FLOAT, glon FLOAT, glat FLOAT, w1 FLOAT, w1err FLOAT, w1snr FLOAT, w2 FLOAT, w2err FLOAT, w2snr FLOAT, w3 FLOAT, w3err FLOAT, w3snr FLOAT, w4 FLOAT, w4err FLOAT, w4snr FLOAT,ccflag VARCHAR(4),extflg INT,var_flg VARCHAR(4), n2mass INT, jmag FLOAT, jerr FLOAT, hmag FLOAT, herr FLOAT, kmag FLOAT, kerr FLOAT, sspp_ra FLOAT,sspp_decl FLOAT);
+
+
+==================
+LOAD DATA
+==================
+
+LOAD DATA LOCAL INFILE 'macho_into_db.dat' INTO TABLE macho_allwise_allmags FIELDS TERMINATED BY ',' (machoid,wisename,match_rad,ra,decl,glon,glat,w1,w1err,w1snr,w2,w2err,w2snr,w3,w3err,w3snr,w4,w4err,w4snr,ccflag,extflg,var_flg,n2mass,jmag,jerr,hmag,herr,kmag,kerr,macho_ra,macho_decl);
+
+LOAD DATA LOCAL INFILE 'ogle_into_db.dat' INTO TABLE ogle3_allwise_allmags FIELDS TERMINATED BY ',' (ogleid,wisename,match_rad,ra,decl,glon,glat,w1,w1err,w1snr,w2,w2err,w2snr,w3,w3err,w3snr,w4,w4err,w4snr,ccflag,extflg,var_flg,n2mass,jmag,jerr,hmag,herr,kmag,kerr,ogle_ra,ogle_decl);
+
+LOAD DATA LOCAL INFILE 'simbad_into_db.dat' INTO TABLE simbad_allwise_allmags FIELDS TERMINATED BY ',' (simbadid,wisename,match_rad,ra,decl,glon,glat,w1,w1err,w1snr,w2,w2err,w2snr,w3,w3err,w3snr,w4,w4err,w4snr,ccflag,extflg,var_flg,n2mass,jmag,jerr,hmag,herr,kmag,kerr,simbad_ra,simbad_decl);
+
+LOAD DATA LOCAL INFILE 'lrgs_into_db.dat' INTO TABLE lrg_allwise_allmags FIELDS TERMINATED BY ',' (lrgid,wisename,match_rad,ra,decl,glon,glat,w1,w1err,w1snr,w2,w2err,w2snr,w3,w3err,w3snr,w4,w4err,w4snr,ccflag,extflg,var_flg,n2mass,jmag,jerr,hmag,herr,kmag,kerr,lrg_ra,lrg_decl);
+
+LOAD DATA LOCAL INFILE 'vagc_into_db.dat' INTO TABLE vagc_allwise_allmags FIELDS TERMINATED BY ',' (vagcid,wisename,match_rad,ra,decl,glon,glat,w1,w1err,w1snr,w2,w2err,w2snr,w3,w3err,w3snr,w4,w4err,w4snr,ccflag,extflg,var_flg,n2mass,jmag,jerr,hmag,herr,kmag,kerr,vagc_ra,vagc_decl);
+
+LOAD DATA LOCAL INFILE 'dr9_sspp_into_db.dat' INTO TABLE dr9_sspp_allwise_allmags FIELDS TERMINATED BY ',' (ssppid,wisename,match_rad,ra,decl,glon,glat,w1,w1err,w1snr,w2,w2err,w2snr,w3,w3err,w3snr,w4,w4err,w4snr,ccflag,extflg,var_flg,n2mass,jmag,jerr,hmag,herr,kmag,kerr,sspp_ra,sspp_decl);
+
+
+==================
+INDEX TABLES
+==================
+
+ALTER TABLE macho_allwise_allmags ADD INDEX machoid(machoid);
+ALTER TABLE macho_allwise_allmags ADD INDEX match_rad(match_rad);
+ALTER TABLE macho_allwise_allmags ADD INDEX ra(ra);
+ALTER TABLE macho_allwise_allmags ADD INDEX decl(decl);
+ALTER TABLE macho_allwise_allmags ADD INDEX glon(glon);
+ALTER TABLE macho_allwise_allmags ADD INDEX glat(glat);
+ALTER TABLE macho_allwise_allmags ADD INDEX w1(w1);
+ALTER TABLE macho_allwise_allmags ADD INDEX w2(w2);
+ALTER TABLE macho_allwise_allmags ADD INDEX w3(w3);
+ALTER TABLE macho_allwise_allmags ADD INDEX w4(w4);
+ALTER TABLE macho_allwise_allmags ADD INDEX w1snr(w1snr);
+ALTER TABLE macho_allwise_allmags ADD INDEX w2snr(w2snr);
+ALTER TABLE macho_allwise_allmags ADD INDEX w3snr(w3snr);
+ALTER TABLE macho_allwise_allmags ADD INDEX w4snr(w4snr);
+ALTER TABLE macho_allwise_allmags ADD INDEX n2mass(n2mass);
+ALTER TABLE macho_allwise_allmags ADD INDEX jmag(jmag);
+ALTER TABLE macho_allwise_allmags ADD INDEX hmag(hmag);
+ALTER TABLE macho_allwise_allmags ADD INDEX kmag(kmag);
+ALTER TABLE macho_allwise_allmags ADD INDEX jerr(jerr);
+ALTER TABLE macho_allwise_allmags ADD INDEX herr(herr);
+ALTER TABLE macho_allwise_allmags ADD INDEX kerr(kerr);
+
+
+ALTER TABLE simbad_allwise_allmags ADD INDEX simbadid(simbadid);
+ALTER TABLE simbad_allwise_allmags ADD INDEX match_rad(match_rad);
+ALTER TABLE simbad_allwise_allmags ADD INDEX ra(ra);
+ALTER TABLE simbad_allwise_allmags ADD INDEX decl(decl);
+ALTER TABLE simbad_allwise_allmags ADD INDEX glon(glon);
+ALTER TABLE simbad_allwise_allmags ADD INDEX glat(glat);
+ALTER TABLE simbad_allwise_allmags ADD INDEX w1(w1);
+ALTER TABLE simbad_allwise_allmags ADD INDEX w2(w2);
+ALTER TABLE simbad_allwise_allmags ADD INDEX w3(w3);
+ALTER TABLE simbad_allwise_allmags ADD INDEX w4(w4);
+ALTER TABLE simbad_allwise_allmags ADD INDEX w1snr(w1snr);
+ALTER TABLE simbad_allwise_allmags ADD INDEX w2snr(w2snr);
+ALTER TABLE simbad_allwise_allmags ADD INDEX w3snr(w3snr);
+ALTER TABLE simbad_allwise_allmags ADD INDEX w4snr(w4snr);
+ALTER TABLE simbad_allwise_allmags ADD INDEX n2mass(n2mass);
+ALTER TABLE simbad_allwise_allmags ADD INDEX jmag(jmag);
+ALTER TABLE simbad_allwise_allmags ADD INDEX hmag(hmag);
+ALTER TABLE simbad_allwise_allmags ADD INDEX kmag(kmag);
+ALTER TABLE simbad_allwise_allmags ADD INDEX jerr(jerr);
+ALTER TABLE simbad_allwise_allmags ADD INDEX herr(herr);
+ALTER TABLE simbad_allwise_allmags ADD INDEX kerr(kerr);
+
+ALTER TABLE ogle3_allwise_allmags ADD INDEX ogleid(ogleid);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX match_rad(match_rad);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX ra(ra);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX decl(decl);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX glon(glon);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX glat(glat);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX w1(w1);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX w2(w2);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX w3(w3);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX w4(w4);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX w1snr(w1snr);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX w2snr(w2snr);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX w3snr(w3snr);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX w4snr(w4snr);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX n2mass(n2mass);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX jmag(jmag);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX hmag(hmag);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX kmag(kmag);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX jerr(jerr);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX herr(herr);
+ALTER TABLE ogle3_allwise_allmags ADD INDEX kerr(kerr);
+
+ALTER TABLE lrg_allwise_allmags ADD INDEX lrgid(lrgid);
+ALTER TABLE lrg_allwise_allmags ADD INDEX match_rad(match_rad);
+ALTER TABLE lrg_allwise_allmags ADD INDEX ra(ra);
+ALTER TABLE lrg_allwise_allmags ADD INDEX decl(decl);
+ALTER TABLE lrg_allwise_allmags ADD INDEX glon(glon);
+ALTER TABLE lrg_allwise_allmags ADD INDEX glat(glat);
+ALTER TABLE lrg_allwise_allmags ADD INDEX w1(w1);
+ALTER TABLE lrg_allwise_allmags ADD INDEX w2(w2);
+ALTER TABLE lrg_allwise_allmags ADD INDEX w3(w3);
+ALTER TABLE lrg_allwise_allmags ADD INDEX w4(w4);
+ALTER TABLE lrg_allwise_allmags ADD INDEX w1snr(w1snr);
+ALTER TABLE lrg_allwise_allmags ADD INDEX w2snr(w2snr);
+ALTER TABLE lrg_allwise_allmags ADD INDEX w3snr(w3snr);
+ALTER TABLE lrg_allwise_allmags ADD INDEX w4snr(w4snr);
+ALTER TABLE lrg_allwise_allmags ADD INDEX n2mass(n2mass);
+ALTER TABLE lrg_allwise_allmags ADD INDEX jmag(jmag);
+ALTER TABLE lrg_allwise_allmags ADD INDEX hmag(hmag);
+ALTER TABLE lrg_allwise_allmags ADD INDEX kmag(kmag);
+ALTER TABLE lrg_allwise_allmags ADD INDEX jerr(jerr);
+ALTER TABLE lrg_allwise_allmags ADD INDEX herr(herr);
+ALTER TABLE lrg_allwise_allmags ADD INDEX kerr(kerr);
+
+ALTER TABLE vagc_allwise_allmags ADD INDEX vagcid(vagcid);
+ALTER TABLE vagc_allwise_allmags ADD INDEX match_rad(match_rad);
+ALTER TABLE vagc_allwise_allmags ADD INDEX ra(ra);
+ALTER TABLE vagc_allwise_allmags ADD INDEX decl(decl);
+ALTER TABLE vagc_allwise_allmags ADD INDEX glon(glon);
+ALTER TABLE vagc_allwise_allmags ADD INDEX glat(glat);
+ALTER TABLE vagc_allwise_allmags ADD INDEX w1(w1);
+ALTER TABLE vagc_allwise_allmags ADD INDEX w2(w2);
+ALTER TABLE vagc_allwise_allmags ADD INDEX w3(w3);
+ALTER TABLE vagc_allwise_allmags ADD INDEX w4(w4);
+ALTER TABLE vagc_allwise_allmags ADD INDEX w1snr(w1snr);
+ALTER TABLE vagc_allwise_allmags ADD INDEX w2snr(w2snr);
+ALTER TABLE vagc_allwise_allmags ADD INDEX w3snr(w3snr);
+ALTER TABLE vagc_allwise_allmags ADD INDEX w4snr(w4snr);
+ALTER TABLE vagc_allwise_allmags ADD INDEX n2mass(n2mass);
+ALTER TABLE vagc_allwise_allmags ADD INDEX jmag(jmag);
+ALTER TABLE vagc_allwise_allmags ADD INDEX hmag(hmag);
+ALTER TABLE vagc_allwise_allmags ADD INDEX kmag(kmag);
+ALTER TABLE vagc_allwise_allmags ADD INDEX jerr(jerr);
+ALTER TABLE vagc_allwise_allmags ADD INDEX herr(herr);
+ALTER TABLE vagc_allwise_allmags ADD INDEX kerr(kerr);
+
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX ssppid(ssppid);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX match_rad(match_rad);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX ra(ra);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX decl(decl);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX glon(glon);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX glat(glat);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX w1(w1);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX w2(w2);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX w3(w3);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX w4(w4);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX w1snr(w1snr);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX w2snr(w2snr);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX w3snr(w3snr);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX w4snr(w4snr);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX n2mass(n2mass);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX jmag(jmag);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX hmag(hmag);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX kmag(kmag);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX jerr(jerr);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX herr(herr);
+ALTER TABLE dr9_sspp_allwise_allmags ADD INDEX kerr(kerr);
+
+
+==================
+DROP TABLES
+==================
+
+DROP TABLE macho_allwise_allmags;
+DROP TABLE ogle3_allwise_allmags;
+DROP TABLE simbad_allwise_allmags;
+
