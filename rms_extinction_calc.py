@@ -1,6 +1,5 @@
 import numpy as np
 import galfastDust as ext
-import os
 
 def return_ebv(ra,decl,DMarry):
 
